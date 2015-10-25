@@ -34,13 +34,13 @@
         <!-- Top Toolbar -->
         <ToolBar VerticalAlignment="Top" Height="36" Grid.RowSpan="2">
             <Button Height="31" VerticalAlignment="Top" Width="36">
-                <Image Source="C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\button images\openFile.png"/>
+                <Image Source="C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\Images\openFile.png"/>
             </Button>
             <Button Height="31" VerticalAlignment="Top" Width="34">
-                <Image Source="C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\button images\addPlaylist.png"/>
+                <Image Source="C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\Images\addPlaylist.png"/>
             </Button>
-            <Button Height="31" VerticalAlignment="Top" Width="36">
-                <Image Source="C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\button images\info.png"/>
+            <Button x:Name="AboutButton" Height="31" VerticalAlignment="Top" Width="36" Click="AboutButton_Click">
+                <Image Source="C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\Images\info.png"/>
             </Button>
 
         </ToolBar>

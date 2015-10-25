@@ -34,5 +34,11 @@ namespace hTunes
             InitializeComponent();
             musicLib = new MusicLib();
         }
+
+        private void AboutButton_Click(object sender, RoutedEventArgs e)
+        {
+            About about = new About();
+            about.ShowDialog();
+        }
     }
 }
