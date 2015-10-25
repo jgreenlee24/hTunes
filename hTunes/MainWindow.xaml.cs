@@ -68,6 +68,12 @@ namespace hTunes
             {
                 dataGrid.ItemsSource = musicLib.SongsForPlaylist(playlist_name).AsDataView();
             }
+        }
+
+        private void AboutButton_Click(object sender, RoutedEventArgs e)
+        {
+            About about = new About();
+            about.ShowDialog();
         } 
     }
 
