@@ -22,4 +22,4 @@
 
 12. 
 
-13. You must use the MusicLib library which will be supplied to you for separating the UI code from the business logic.
+13.  
