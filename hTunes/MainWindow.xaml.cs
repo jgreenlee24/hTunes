@@ -27,9 +27,17 @@ namespace hTunes
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MusicLib musicLib;
+
         public MainWindow()
         {
             InitializeComponent();
+            LoadPlaylist();
+        }
+
+        public void LoadPlaylist()
+        {
+            musicLib.AddPlaylist()
         }
     }
 }

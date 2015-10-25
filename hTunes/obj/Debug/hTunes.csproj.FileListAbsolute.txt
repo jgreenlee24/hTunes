@@ -12,3 +12,5 @@ C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\obj\Debug\hTunes.Properties.Resou
 C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\obj\Debug\hTunes.csproj.GenerateResource.Cache
 C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\obj\Debug\hTunes.exe
 C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\obj\Debug\hTunes.pdb
+C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\obj\Debug\hTunes.exe
+C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\obj\Debug\hTunes.pdb
