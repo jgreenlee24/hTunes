@@ -14,3 +14,14 @@ C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\obj\Debug\hTunes.exe
 C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\obj\Debug\hTunes.pdb
 C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\obj\Debug\hTunes.exe
 C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\obj\Debug\hTunes.pdb
+C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\bin\Debug\hTunes.exe
+C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\bin\Debug\hTunes.pdb
+C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\bin\Debug\taglib-sharp.dll
+C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\obj\Debug\hTunes.csprojResolveAssemblyReference.cache
+C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\obj\Debug\MainWindow.baml
+C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\obj\Debug\MainWindow.g.cs
+C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\obj\Debug\App.g.cs
+C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\obj\Debug\hTunes_MarkupCompile.cache
+C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\obj\Debug\hTunes.g.resources
+C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\obj\Debug\hTunes.Properties.Resources.resources
+C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\obj\Debug\hTunes.csproj.GenerateResource.Cache

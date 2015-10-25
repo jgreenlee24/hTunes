@@ -32,12 +32,7 @@ namespace hTunes
         public MainWindow()
         {
             InitializeComponent();
-            LoadPlaylist();
-        }
-
-        public void LoadPlaylist()
-        {
-            musicLib.AddPlaylist()
+            musicLib = new MusicLib();
         }
     }
 }
