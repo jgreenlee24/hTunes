@@ -33,10 +33,10 @@
 
         <!-- Top Toolbar -->
         <ToolBar VerticalAlignment="Top" Height="36" Grid.RowSpan="2">
-            <Button Height="31" VerticalAlignment="Top" Width="36">
+            <Button x:Name="OpenButton" VerticalAlignment="Top" Width="36" Click="OpenButton_Click">
                 <Image Source="Images\openFile.png"/>
             </Button>
-            <Button Height="31" VerticalAlignment="Top" Width="34">
+            <Button x:Name="NewPlaylistButton" Height="31" VerticalAlignment="Top" Width="34" Click="NewPlaylistButton_Click">
                 <Image Source="Images\addPlaylist.png"/>
             </Button>
             <Button x:Name="AboutButton" Height="31" VerticalAlignment="Top" Width="36" Click="AboutButton_Click">
@@ -47,7 +47,7 @@
         <Button Content="Play" Margin="117,0,0,8" VerticalAlignment="Bottom" RenderTransformOrigin="0.178,0.575" Grid.Row="2" Height="20" HorizontalAlignment="Left" Width="75"/>
         <Button Content="Stop" HorizontalAlignment="Left" Margin="197,0,0,8" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.178,0.575" Grid.Row="2" Height="20"/>
         <Button Content="Show" Margin="391,0,0,8" VerticalAlignment="Bottom" RenderTransformOrigin="0.178,0.575" Grid.Row="2" Height="20" HorizontalAlignment="Left" Width="75"/>
-        <ListBox x:Name="listBox1" HorizontalAlignment="Left" Margin="10,36,0,5" Width="100" Grid.Row="1" Grid.RowSpan="2"/>
+        <ListBox x:Name="listBox1" HorizontalAlignment="Left" Margin="10,36,0,5" Width="100" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="listBox1_SelectionChanged"/>
 
 
     </Grid>

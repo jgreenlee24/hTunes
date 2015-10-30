@@ -1,25 +1,31 @@
-1.  When a specific playlist is selected, only songs from that playlist should be displayed in the data grid.
+﻿Partners: Justin Greenlee, Keith Cozad
+Due Date: November 1st, 2015
 
-2.  
+Summary: Audio Playlist Application similar to iTunes.
 
-3. When a song is selected, a detail pane should display details about the song including a picture of the album cover which is obtained from last.fm.    
+Percentage:
+Justin - %
+Keith  - %
 
-4. A song can be played by selecting the song in the data grid pressing the Play button or by right‐clicking the song and selecting “Play” from the context menu.  The Stop button should stop play.  Other buttons that pause, change the volume, or advance to the next song would be helpful but are not required.  When a song is finished playing, ideally your app should advance to the next song in the list, but this is not a requirement.
+Completed	Requirements:
+JG		1. Listbox lists songs for Playlists
+JG		2. Songs displayed in datagrid
+		3. Detail pane
+		4. Play, Stop, Pause buttons
+KC		5. Toolbar
+		6. Open dialog box: add new songs from file
+		7. Create new Playlists
+			--Drag-Drop Songs between Playlists
+		8. Remove Songs
+Done		9. Store data in music.xml
+		10. Modify song information
+KC		11. Resizable Window
+KC		12. About Dialog Box
+Done		13. Use MusicLib library
 
-5.
+		Additional Requirements:
+		14. Rename, Delete Playlists
+		15. Control Template for Play/Stop buttons
+		16. Search box
 
-6. The program should allow songs to be added to the listing of songs by launching an open dialog box and allowing the user to select a song.  Provide a filter that by default shows .mp3, .m4a,.wma, and .wav files in the open file dialog box.   After selecting a song, the program should read the metadata stored in the music file (if available), add the song to the data grid, and select/highlight the song (so the user can see it among the list of potentially hundreds of songs).   
-
-7. The program should allow the user to create playlists in a manner similar to iTunes. The user should be able to create a new playlist by selecting a New Playlist button from the toolbar.  Songs can be added to a playlist by dragging them from the grid control and dropping them onto the desired playlist in the list box.  Each song that is dropped onto a playlist should be added to the end of the playlist.  When viewing a playlist, the songs should be presented in order of position.  
- 
-8. Songs can be removed from the list of All Music by right‐clicking the song and selecting “Remove” from the context menu.  A dialog box should confirm the removal.  A song can be removed from a playlist by viewing the songs in the playlist, right‐clicking the song, and selecting “Remove from Playlist” from the context menu.  No dialog box is necessary. Note that the ordering of the songs in a playlist should be updated to reflect the removal of a song so if song at position 2 was removed, the 3rd song is now position 2, the 4th is position 3, and so on.
-
-9. The list of all song files and playlists should be stored in a file called music.xml. This file should reside in the same folder as the app’s .exe.  The file should be loaded when the app is first executed and saved when the app terminates.  (Ideally the file should be saved whenever a change is made to a song or playlist, but you should only save it once when the app terminates.)
-
-10. Song information can be modified directly in the data grid when viewing All Music.  Song info should not be editable when viewing a playlist.
-
-11.
-
-12. 
-
-13.  
+Known Bugs:

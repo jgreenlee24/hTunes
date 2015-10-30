@@ -35,46 +35,58 @@ namespace hTunes
             InitializeComponent();
             musicLib = new MusicLib();
             InitializeList();
+            InitializeGrid();
         }
 
+        //  Adds Playlists to ListBox1
         private void InitializeList(){
             listBox1.Items.Add("All Music");
             foreach (string playlist in musicLib.Playlists)
             {
                 listBox1.Items.Add(playlist);
             }
+
             listBox1.SelectedValue = "All Music";
-            UpdateDataGrid();
         }
 
-        private void UpdateDataGrid()
+        // Creates "All Music" Playlist and Syncs Grid with "All Music" Playlist
+        private void InitializeGrid()
+        {
+            musicLib.AddPlaylist("All Music");
+            foreach (string id in musicLib.SongIds)
+            {
+                musicLib.AddSongToPlaylist(Int32.Parse(id), "All Music");
+            }
+            DataTable table = musicLib.SongsForPlaylist("All Music");
+            dataGrid.ItemsSource = table.AsDataView();
+        }
+
+        // Syncs Grid with Selected Playlist from ListBox1
+        private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string playlist_name = (string)listBox1.SelectedValue;
-            if (playlist_name == "All Music")
-            {
-                foreach (string id in musicLib.SongIds)
-                {
-                    Song song = musicLib.GetSong(Int32.Parse(id));
-                    DataGridItem item = new DataGridItem();
-                    item.id = song.Id;
-                    item.title = song.Title;
-                    item.artist = song.Artist;
-                    item.album = song.Album;
-                    item.genre = song.Genre;
-                    dataGrid.Items.Add(item);
-                }
-            }
-            else
-            {
-                dataGrid.ItemsSource = musicLib.SongsForPlaylist(playlist_name).AsDataView();
-            }
+            DataTable table = musicLib.SongsForPlaylist(playlist_name);
+            dataGrid.ItemsSource = table.AsDataView();
         }
 
+        // Displays About Dialog
         private void AboutButton_Click(object sender, RoutedEventArgs e)
         {
             About about = new About();
             about.ShowDialog();
-        } 
+        }
+
+        // Prompt User for Playlist Name and Add Playlist to Library
+        private void NewPlaylistButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+        }
+
+        private void OpenButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
     public struct DataGridItem
