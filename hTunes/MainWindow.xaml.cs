@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 /**
  * Authors: Justin Greenlee, Keith Cozad
@@ -171,6 +172,13 @@ namespace hTunes
                 if (songs.Count() > 0)
                      e.Effects = DragDropEffects.None;
             }
+        }
+
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
         }
     }
 }

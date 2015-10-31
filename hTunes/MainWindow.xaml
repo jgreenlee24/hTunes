@@ -23,9 +23,18 @@
             <DataGrid.RowDetailsTemplate>
                 <DataTemplate>
                     <Border Background="AliceBlue">
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="{Binding title}" />
-                            <Image Source="{Binding albumImage}" />
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <Image Source="{Binding albumImage}" Width="30" Height="30"/>
+                            <StackPanel Orientation="Vertical" Margin="5">
+                                <TextBlock>Title: <TextBlock Text= "{Binding title}"/></TextBlock>
+                                <TextBlock>Artist: <TextBlock Text= "{Binding artist}"/></TextBlock>
+                                <TextBlock>Length: <TextBlock Text= "{Binding length}"/></TextBlock>
+                                <TextBlock>           
+                                    <Hyperlink NavigateUri="{Binding url}" RequestNavigate="Hyperlink_RequestNavigate">
+                                        More info
+                                    </Hyperlink>
+                                </TextBlock>
+                            </StackPanel>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
