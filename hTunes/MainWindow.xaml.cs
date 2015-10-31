@@ -180,5 +180,13 @@ namespace hTunes
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
         }
+
+        // Capitalize the selected text
+        private void Rename_MenuItemClick(object sender, RoutedEventArgs e)
+        {
+            string playlist_name = (string)listBox1.SelectedValue;
+            MessageBox.Show(playlist_name);
+        }
+
     }
 }
