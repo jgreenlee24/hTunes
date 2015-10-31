@@ -15,7 +15,7 @@ JG		2. Songs displayed in datagrid
 KC		5. Toolbar
 		6. Open dialog box: add new songs from file
 		7. Create new Playlists
-			--Drag-Drop Songs between Playlists
+JG			--Drag-Drop Songs between Playlists
 		8. Remove Songs
 Done		9. Store data in music.xml
 		10. Modify song information

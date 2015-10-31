@@ -107,11 +107,13 @@ namespace hTunes
                 Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance))
             {
                 // Initiate dragging the text from the textbox
-                var dataObj = new DataObject(dataGrid.SelectedValue);
-                dataObj.SetData("Row", dataGrid.SelectedValue);
-                DragDrop.DoDragDrop(dataGrid, dataObj, DragDropEffects.Copy);
+                if (dataGrid.SelectedValue != null)
+                {
+                    var dataObj = new DataObject(dataGrid.SelectedValue);
+                    dataObj.SetData("Row", dataGrid.SelectedValue);
+                    DragDrop.DoDragDrop(dataGrid, dataObj, DragDropEffects.Copy);
+                }
             }
-
         }
 
         private void dataGrid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
