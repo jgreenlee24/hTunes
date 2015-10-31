@@ -33,10 +33,6 @@ namespace hTunes
         // Used to track initial left button click
         private Point startPoint;
 
-        // Used to track the previously selected playlist
-        private String prevPlaylist;
-
-
         public MainWindow()
         {
             InitializeComponent();
@@ -53,7 +49,7 @@ namespace hTunes
                 listBox1.Items.Add(playlist);
             }
 
-            listBox1.SelectedValue = prevPlaylist = "All Music";
+            listBox1.SelectedValue = "All Music";
         }
 
         // Creates "All Music" Playlist and Syncs Grid with "All Music" Playlist
@@ -86,13 +82,26 @@ namespace hTunes
         // Prompt User for Playlist Name and Add Playlist to Library
         private void NewPlaylistButton_Click(object sender, RoutedEventArgs e)
         {
-            
 
         }
 
+        // Opens File Dialog for inserting new Songs
         private void OpenButton_Click(object sender, RoutedEventArgs e)
         {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.FileName = "Song"; // Default file name
+            dlg.DefaultExt = ".txt"; // Default file extension
+            dlg.Filter = "Media Files (.mp3, .m4a, .wma, .wav)|*.mp3; *.m4a; *.wma; *.wav"; // Filter files by extension
 
+            // Show open file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Process open file dialog box results
+            if (result == true)
+            {
+                // Open document
+                string filename = dlg.FileName;
+            }
         }
 
         private void dataGrid_MouseMove(object sender, MouseEventArgs e)
