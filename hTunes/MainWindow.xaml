@@ -8,7 +8,8 @@
             <RowDefinition Height="152*"/>
             <RowDefinition Height="145*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Margin="115,36,2,33" Grid.Row="1" Grid.RowSpan="2">
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Margin="115,36,2,33" Grid.Row="1" Grid.RowSpan="2" 
+                  MouseMove="dataGrid_MouseMove" PreviewMouseLeftButtonDown="dataGrid_PreviewMouseLeftButtonDown">
             <!-- DataGrid Column Headers-->
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Visibility="Hidden"/>
@@ -47,8 +48,7 @@
         <Button Content="Play" Margin="117,0,0,8" VerticalAlignment="Bottom" RenderTransformOrigin="0.178,0.575" Grid.Row="2" Height="20" HorizontalAlignment="Left" Width="75"/>
         <Button Content="Stop" HorizontalAlignment="Left" Margin="197,0,0,8" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.178,0.575" Grid.Row="2" Height="20"/>
         <Button Content="Show" Margin="391,0,0,8" VerticalAlignment="Bottom" RenderTransformOrigin="0.178,0.575" Grid.Row="2" Height="20" HorizontalAlignment="Left" Width="75"/>
-        <ListBox x:Name="listBox1" HorizontalAlignment="Left" Margin="10,36,0,5" Width="100" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="listBox1_SelectionChanged"/>
-
-
+        <ListBox x:Name="listBox1" HorizontalAlignment="Left" Margin="10,36,0,5" Width="100" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="listBox1_SelectionChanged" 
+                 AllowDrop="True" Drop="listBox1_Drop" DragOver="listBox1_DragOver"/>
     </Grid>
 </Window>

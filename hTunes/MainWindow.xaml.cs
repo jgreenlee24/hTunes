@@ -30,6 +30,13 @@ namespace hTunes
     {
         private MusicLib musicLib;
 
+        // Used to track initial left button click
+        private Point startPoint;
+
+        // Used to track the previously selected playlist
+        private String prevPlaylist;
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -46,7 +53,7 @@ namespace hTunes
                 listBox1.Items.Add(playlist);
             }
 
-            listBox1.SelectedValue = "All Music";
+            listBox1.SelectedValue = prevPlaylist = "All Music";
         }
 
         // Creates "All Music" Playlist and Syncs Grid with "All Music" Playlist
@@ -87,14 +94,72 @@ namespace hTunes
         {
 
         }
-    }
 
-    public struct DataGridItem
-    {
-        public int id { get; set;}
-        public string title { get; set; }
-        public string artist { get; set; }
-        public string album { get; set; }
-        public string genre { get; set; }
+        private void dataGrid_MouseMove(object sender, MouseEventArgs e)
+        {
+            // Get the current mouse position
+            Point mousePos = e.GetPosition(null);
+            Vector diff = startPoint - mousePos;
+
+            // Start the drag-drop if mouse has moved far enough
+            if (e.LeftButton == MouseButtonState.Pressed &&
+                (Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance ||
+                Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance))
+            {
+                // Initiate dragging the text from the textbox
+                var dataObj = new DataObject(dataGrid.SelectedValue);
+                dataObj.SetData("Row", dataGrid.SelectedValue);
+                DragDrop.DoDragDrop(dataGrid, dataObj, DragDropEffects.Copy);
+            }
+
+        }
+
+        private void dataGrid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            // Store the mouse position
+            startPoint = e.GetPosition(null);
+        }
+
+        private void listBox1_Drop(object sender, DragEventArgs e)
+        {
+            // code inspired from: http://stackoverflow.com/questions/6938752/wpf-how-do-i-handle-a-click-on-a-listbox-item
+            // and: http://stackoverflow.com/questions/1719013/obtaining-dodragdrop-dragsource
+
+            // Get the playlist dropping on
+            string playlist = "";
+            var item = ItemsControl.ContainerFromElement(listBox1, e.OriginalSource as DependencyObject) as ListBoxItem;
+            playlist = item.Content as String;
+
+            // Get the song from e
+            var row = (e.Data.GetData("Row") as DataRowView).Row;
+            int songId = Int32.Parse(row.Field<string>("id"));
+
+            // Add song to Playlist (data validation is done in DragOver event)
+            musicLib.AddSongToPlaylist(songId, playlist);
+        }
+
+        private void listBox1_DragOver(object sender, DragEventArgs e)
+        {
+            // Get the playlist dropping on
+            string playlist = "";
+            var item = ItemsControl.ContainerFromElement(listBox1, e.OriginalSource as DependencyObject) as ListBoxItem;
+            if (item != null)
+            {
+                playlist = item.Content as String;
+
+                // check if dropping onto "All Music"
+                if (playlist == "All Music")
+                    e.Effects = DragDropEffects.None;
+
+                // get the song id
+                var row = (e.Data.GetData("Row") as DataRowView).Row;
+                int songId = Int32.Parse(row.Field<string>("id"));
+
+                // check if song is already in playlist
+                var songs = musicLib.SongsForPlaylist(playlist).Select("id=" + songId);
+                if (songs.Count() > 0)
+                     e.Effects = DragDropEffects.None;
+            }
+        }
     }
 }
