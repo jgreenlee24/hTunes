@@ -10,11 +10,11 @@ Keith  - %
 Completed	Requirements:
 JG		1. Listbox lists songs for Playlists
 JG		2. Songs displayed in datagrid
-		3. Detail pane
+KC		3. Detail pane
 		4. Play, Stop, Pause buttons
 KC		5. Toolbar
 		6. Open dialog box: add new songs from file
-		7. Create new Playlists
+JG		7. Create new Playlists
 JG			--Drag-Drop Songs between Playlists
 		8. Remove Songs
 Done		9. Store data in music.xml
@@ -24,7 +24,7 @@ KC		12. About Dialog Box
 Done		13. Use MusicLib library
 
 		Additional Requirements:
-		14. Rename, Delete Playlists
+KC		14. Rename, Delete Playlists
 		15. Control Template for Play/Stop buttons
 		16. Search box
 

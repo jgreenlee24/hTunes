@@ -9,7 +9,7 @@
             <RowDefinition Height="145*"/>
         </Grid.RowDefinitions>
         <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Margin="115,36,2,33" Grid.Row="1" Grid.RowSpan="2" 
-                  MouseMove="dataGrid_MouseMove" PreviewMouseLeftButtonDown="dataGrid_PreviewMouseLeftButtonDown">
+                  MouseMove="dataGrid_MouseMove" PreviewMouseLeftButtonDown="dataGrid_PreviewMouseLeftButtonDown" CellEditEnding="dataGrid_CellEditEnding">
             <!-- DataGrid Column Headers-->
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Visibility="Hidden"/>
