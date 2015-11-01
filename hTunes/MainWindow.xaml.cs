@@ -225,6 +225,10 @@ namespace hTunes
                         musicLib.Save();
                         UpdateList();
                     }
+                    else
+                    {
+                        MessageBox.Show("Failed to rename playlist.");
+                    }
                 }
             }
             else
@@ -233,7 +237,27 @@ namespace hTunes
             }
         }
 
-
+        // Delete Playlist
+        private void Delete_MenuItemClick(object sender, RoutedEventArgs e)
+        {
+            string playlist_name = (string)listBox1.SelectedValue;
+            if (playlist_name != "All Music")
+            {
+                    if (musicLib.DeletePlaylist(playlist_name))
+                    {
+                        musicLib.Save();
+                        UpdateList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to delete playlist.");
+                    }
+            }
+            else
+            {
+                MessageBox.Show("You can't Delete All Music");
+            }
+        }
 
         #endregion
 
