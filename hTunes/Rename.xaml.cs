@@ -19,9 +19,29 @@ namespace hTunes
     /// </summary>
     public partial class Rename : Window
     {
-        public Rename()
+        public string NewName
+        {
+            get { return lblName.Text; }
+            set { lblName.Text = value; }
+        }
+
+
+        public Rename(string oldName)
         {
             InitializeComponent();
+            NewName = oldName;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+            this.Close();
         }
     }
 }

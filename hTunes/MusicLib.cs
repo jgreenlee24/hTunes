@@ -295,8 +295,12 @@ namespace hTunes
 
             table = musicDataSet.Tables["playlist_song"];
             foreach (DataRow r in table.Rows)
+            {
                 if ((string)r["playlist_name"] == oldPlaylistName)
+                {
                     r["playlist_name"] = newPlaylistName;
+                }
+            }
 
             return true;
         }              

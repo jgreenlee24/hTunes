@@ -63,9 +63,12 @@
     <genre>Alternative</genre>
   </song>
   <playlist>
-    <name>Cool stuff</name>
+    <name>cool stuff</name>
   </playlist>
   <playlist>
     <name>Quiet music</name>
+  </playlist>
+  <playlist>
+    <name>woopio</name>
   </playlist>
 </music>

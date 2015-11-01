@@ -30,3 +30,5 @@ C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\obj\Debug\About.baml
 C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\obj\Debug\About.g.cs
 C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\obj\Debug\About.baml
 C:\Users\jgreenlee\Documents\GitHub\hTunes\hTunes\obj\Debug\About.g.cs
+C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\obj\Debug\Rename.baml
+C:\Users\kcozad\Documents\GitHub\hTunes\hTunes\obj\Debug\Rename.g.cs

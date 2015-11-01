@@ -105,6 +105,8 @@ namespace hTunes
             }
         }
 
+        #region Drag and drop
+
         private void dataGrid_MouseMove(object sender, MouseEventArgs e)
         {
             // Get the current mouse position
@@ -146,8 +148,11 @@ namespace hTunes
             var row = (e.Data.GetData("Row") as DataRowView).Row;
             int songId = Int32.Parse(row.Field<string>("id"));
 
+            //ListBoxItem target = sender as ListBoxItem;
+
             // Add song to Playlist (data validation is done in DragOver event)
             musicLib.AddSongToPlaylist(songId, playlist);
+            musicLib.Save();
         }
 
         private void listBox1_DragOver(object sender, DragEventArgs e)
@@ -174,6 +179,9 @@ namespace hTunes
             }
         }
 
+        #endregion
+
+        #region More info
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
@@ -181,12 +189,34 @@ namespace hTunes
             e.Handled = true;
         }
 
-        // Capitalize the selected text
+        #endregion
+
+        #region Context menu
+
+        // Rename Playlist
         private void Rename_MenuItemClick(object sender, RoutedEventArgs e)
         {
             string playlist_name = (string)listBox1.SelectedValue;
-            MessageBox.Show(playlist_name);
+            if (playlist_name != "All Music")
+            {
+                Rename rename = new Rename(playlist_name);
+                rename.ShowDialog();
+                if(rename.DialogResult == true)
+                {
+                    musicLib.RenamePlaylist(playlist_name, rename.NewName);
+                }
+            }
+            else
+            {
+                MessageBox.Show("You can't rename All Music");
+            }
         }
+
+
+
+        #endregion
+
+
 
     }
 }
