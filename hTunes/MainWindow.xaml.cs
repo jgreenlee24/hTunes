@@ -43,7 +43,8 @@ namespace hTunes
         }
 
         //  Adds Playlists to ListBox1
-        private void UpdateList(){
+        private void UpdateList()
+        {
             listBox1.Items.Clear();
             if (!musicLib.PlaylistExists("All Music"))
             {
@@ -192,7 +193,7 @@ namespace hTunes
                 // check if song is already in playlist
                 var songs = musicLib.SongsForPlaylist(playlist).Select("id=" + songId);
                 if (songs.Count() > 0)
-                     e.Effects = DragDropEffects.None;
+                    e.Effects = DragDropEffects.None;
             }
         }
 
@@ -218,9 +219,9 @@ namespace hTunes
             {
                 Rename rename = new Rename(playlist_name);
                 rename.ShowDialog();
-                if(rename.DialogResult == true)
+                if (rename.DialogResult == true)
                 {
-                    if(musicLib.RenamePlaylist(playlist_name, rename.NewName))
+                    if (musicLib.RenamePlaylist(playlist_name, rename.NewName))
                     {
                         musicLib.Save();
                         UpdateList();
@@ -233,7 +234,23 @@ namespace hTunes
             }
         }
 
-
+        // Delete Playlist
+        private void Delete_MenuItemClick(object sender, RoutedEventArgs e)
+        {
+            string playlist_name = (string)listBox1.SelectedValue;
+            if (playlist_name != "All Music")
+            {
+                if (musicLib.DeletePlaylist(playlist_name))
+                {
+                    musicLib.Save();
+                    UpdateList();
+                }
+            }
+            else
+            {
+                MessageBox.Show("You can't delete All Music");
+            }
+        }
 
         #endregion
 

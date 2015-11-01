@@ -63,7 +63,7 @@
                 <ContextMenu>
                     <MenuItem Header="Rename" Click="Rename_MenuItemClick">
                     </MenuItem>
-                        <MenuItem Command="Delete">
+                    <MenuItem Header="Delete" Click="Delete_MenuItemClick">
                     </MenuItem>
                 </ContextMenu>
 
