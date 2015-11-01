@@ -61,7 +61,6 @@ namespace hTunes
             }
 
             listBox1.SelectedValue = "All Music";
-            dataGrid.IsReadOnly = false;
         }
 
         // Creates "All Music" Playlist and Syncs Grid with "All Music" Playlist
@@ -77,9 +76,6 @@ namespace hTunes
             string playlist_name = (string)listBox1.SelectedValue;
             DataTable table = musicLib.SongsForPlaylist(playlist_name);
             dataGrid.ItemsSource = table.AsDataView();
-            if (playlist_name == "All Music")
-                dataGrid.IsReadOnly = false;
-            else dataGrid.IsReadOnly = true;
         }
 
         // Displays About Dialog
@@ -102,9 +98,6 @@ namespace hTunes
                     {
                         musicLib.Save();
                         UpdateList();
-                    } else
-                    {
-                        MessageBox.Show("Failed to create new playlist.");
                     }
                 }
             }
@@ -126,15 +119,6 @@ namespace hTunes
             {
                 // Open document
                 string filename = dlg.FileName;
-
-                // TODO: read metadata
-
-
-                // TODO: add song to datagrid
-
-
-                // TODO: select/highlight song in datagrid
-
             }
         }
 
@@ -180,6 +164,8 @@ namespace hTunes
             // Get the song from e
             var row = (e.Data.GetData("Row") as DataRowView).Row;
             int songId = Int32.Parse(row.Field<string>("id"));
+
+            //ListBoxItem target = sender as ListBoxItem;
 
             // Add song to Playlist (data validation is done in DragOver event)
             musicLib.AddSongToPlaylist(songId, playlist);
@@ -246,11 +232,12 @@ namespace hTunes
                 MessageBox.Show("You can't rename All Music");
             }
         }
+
+
+
         #endregion
 
-        private void dataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
-        {
-            musicLib.Save();
-        }
+
+
     }
 }
