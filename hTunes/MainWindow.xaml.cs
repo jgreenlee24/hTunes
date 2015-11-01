@@ -124,6 +124,8 @@ namespace hTunes
             {
                 // Open document
                 string filename = dlg.FileName;
+                Song song = musicLib.AddSong(filename);
+                musicLib.AddSongToPlaylist(song.Id, "All Music");
             }
         }
 
@@ -169,8 +171,6 @@ namespace hTunes
             // Get the song from e
             var row = (e.Data.GetData("Row") as DataRowView).Row;
             int songId = Int32.Parse(row.Field<string>("id"));
-
-            //ListBoxItem target = sender as ListBoxItem;
 
             // Add song to Playlist (data validation is done in DragOver event)
             musicLib.AddSongToPlaylist(songId, playlist);
@@ -257,5 +257,27 @@ namespace hTunes
         }
 
         #endregion
+
+        private void dataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            // Get the data as a text from TextBox
+            TextBox t = e.EditingElement as TextBox;
+            DataRowView row = (DataRowView)dataGrid.SelectedItems[0];
+
+            // Update Song based on selected Column
+            Song song = musicLib.GetSong(Int32.Parse(row["Id"] as String));
+            string col = e.Column.Header as String;
+            switch (col)
+            {
+                case "Title": song.Title = t.Text; break;
+                case "Artist": song.Artist = t.Text; break;
+                case "Album": song.Album = t.Text; break;
+                case "Genre": song.Genre = t.Text; break;
+
+            }
+             
+            musicLib.UpdateSong(song.Id, song);
+            musicLib.Save();
+        }
     }
 }
