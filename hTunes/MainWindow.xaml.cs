@@ -69,6 +69,7 @@ namespace hTunes
         {
             DataTable table = musicLib.SongsForPlaylist("All Music");
             dataGrid.ItemsSource = table.AsDataView();
+            dataGrid.IsReadOnly = false;
         }
 
         // Syncs Grid with Selected Playlist from ListBox1
@@ -77,6 +78,9 @@ namespace hTunes
             string playlist_name = (string)listBox1.SelectedValue;
             DataTable table = musicLib.SongsForPlaylist(playlist_name);
             dataGrid.ItemsSource = table.AsDataView();
+            if (playlist_name == "All Music")
+                dataGrid.IsReadOnly = false;
+            else dataGrid.IsReadOnly = true;
         }
 
         // Displays About Dialog
@@ -253,8 +257,5 @@ namespace hTunes
         }
 
         #endregion
-
-
-
     }
 }
