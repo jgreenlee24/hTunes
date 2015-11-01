@@ -38,13 +38,23 @@ namespace hTunes
         {
             InitializeComponent();
             musicLib = new MusicLib();
-            InitializeList();
+            UpdateList();
             InitializeGrid();
         }
 
         //  Adds Playlists to ListBox1
-        private void InitializeList(){
-            listBox1.Items.Add("All Music");
+        private void UpdateList(){
+            listBox1.Items.Clear();
+            if (!musicLib.PlaylistExists("All Music"))
+            {
+                listBox1.Items.Add("All Music");
+                musicLib.AddPlaylist("All Music");
+                foreach (string id in musicLib.SongIds)
+                {
+                    musicLib.AddSongToPlaylist(Int32.Parse(id), "All Music");
+                }
+            }
+
             foreach (string playlist in musicLib.Playlists)
             {
                 listBox1.Items.Add(playlist);
@@ -56,11 +66,6 @@ namespace hTunes
         // Creates "All Music" Playlist and Syncs Grid with "All Music" Playlist
         private void InitializeGrid()
         {
-            musicLib.AddPlaylist("All Music");
-            foreach (string id in musicLib.SongIds)
-            {
-                musicLib.AddSongToPlaylist(Int32.Parse(id), "All Music");
-            }
             DataTable table = musicLib.SongsForPlaylist("All Music");
             dataGrid.ItemsSource = table.AsDataView();
         }
@@ -206,6 +211,7 @@ namespace hTunes
                     if(musicLib.RenamePlaylist(playlist_name, rename.NewName))
                     {
                         musicLib.Save();
+                        UpdateList();
                     }
                 }
             }
