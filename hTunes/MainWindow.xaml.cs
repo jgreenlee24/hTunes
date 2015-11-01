@@ -203,7 +203,10 @@ namespace hTunes
                 rename.ShowDialog();
                 if(rename.DialogResult == true)
                 {
-                    musicLib.RenamePlaylist(playlist_name, rename.NewName);
+                    if(musicLib.RenamePlaylist(playlist_name, rename.NewName))
+                    {
+                        musicLib.Save();
+                    }
                 }
             }
             else
