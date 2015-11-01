@@ -21,8 +21,8 @@ namespace hTunes
     {
         public string NewName
         {
-            get { return lblName.Text; }
-            set { lblName.Text = value; }
+            get { return txtName.Text; }
+            set { txtName.Text = value; }
         }
 
 

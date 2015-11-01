@@ -88,7 +88,19 @@ namespace hTunes
         // Prompt User for Playlist Name and Add Playlist to Library
         private void NewPlaylistButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Rename rename = new Rename("");
+            rename.ShowDialog();
+            if (rename.DialogResult == true)
+            {
+                if (!musicLib.PlaylistExists(rename.NewName))
+                {
+                    if (musicLib.AddPlaylist(rename.NewName))
+                    {
+                        musicLib.Save();
+                        UpdateList();
+                    }
+                }
+            }
         }
 
         // Opens File Dialog for inserting new Songs
