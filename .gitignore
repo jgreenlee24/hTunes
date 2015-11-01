@@ -272,3 +272,11 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+*.suo
+*.suo
+*.pdb
+*.cs
+*.cache
+*.pdb
+*.cache
+*.baml

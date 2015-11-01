@@ -54,8 +54,8 @@
             </Button>
 
         </ToolBar>
-        <Button Content="Play" Margin="117,0,0,8" VerticalAlignment="Bottom" RenderTransformOrigin="0.178,0.575" Grid.Row="2" Height="20" HorizontalAlignment="Left" Width="75"/>
-        <Button Content="Stop" HorizontalAlignment="Left" Margin="197,0,0,8" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.178,0.575" Grid.Row="2" Height="20"/>
+        <Button x:Name="btnPlay" Content="Play" Margin="117,0,0,8" VerticalAlignment="Bottom" RenderTransformOrigin="0.178,0.575" Grid.Row="2" Height="20" HorizontalAlignment="Left" Width="75" Click="btnPlay_Click"/>
+        <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="197,0,0,8" VerticalAlignment="Bottom" Width="75" RenderTransformOrigin="0.178,0.575" Grid.Row="2" Height="20" Click="btnStop_Click"/>
         <Button Content="Show" Margin="391,0,0,8" VerticalAlignment="Bottom" RenderTransformOrigin="0.178,0.575" Grid.Row="2" Height="20" HorizontalAlignment="Left" Width="75"/>
         <ListBox x:Name="listBox1" HorizontalAlignment="Left" Margin="10,36,0,5" Width="100" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="listBox1_SelectionChanged" 
                  AllowDrop="True" Drop="listBox1_Drop" DragOver="listBox1_DragOver">
