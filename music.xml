@@ -37,9 +37,9 @@
     <title>Wrong</title>
     <artist>Depeche Mode</artist>
     <album>Wrong - Single</album>
-    <filename>Wrong.mp3</filename>
+    <filename>C:\Users\kcozad\Desktop\Wrong.mp3</filename>
     <length>3:13</length>
-    <genre>Alternative</genre>
+    <genre>sdfgsdgfase</genre>
     <url>http://www.last.fm/music/Depeche+Mode/Sounds+Of+The+Universe</url>
     <albumImage>http://img2-ak.lst.fm/i/u/34s/ebfd381f672a4d25acfe3914d030b2b9.png</albumImage>
   </song>
@@ -63,12 +63,142 @@
     <genre>Alternative</genre>
   </song>
   <playlist>
-    <name>cool stuff</name>
+    <name>sdrhyser</name>
   </playlist>
   <playlist>
     <name>Quiet music</name>
   </playlist>
   <playlist>
-    <name>woopio</name>
+    <name>All Music</name>
   </playlist>
+  <playlist_song>
+    <song_id>9</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>1</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>10</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>2</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>11</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>3</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>14</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>4</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>15</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>5</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>16</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>6</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>9</song_id>
+    <playlist_name>sdrhyser</playlist_name>
+    <position>1</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>10</song_id>
+    <playlist_name>sdrhyser</playlist_name>
+    <position>2</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>9</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>7</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>10</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>8</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>11</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>9</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>14</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>10</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>15</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>11</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>16</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>12</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>9</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>13</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>10</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>14</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>11</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>15</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>14</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>16</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>15</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>17</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>16</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>18</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>9</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>19</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>10</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>20</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>11</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>21</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>14</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>22</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>15</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>23</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>16</song_id>
+    <playlist_name>All Music</playlist_name>
+    <position>24</position>
+  </playlist_song>
 </music>

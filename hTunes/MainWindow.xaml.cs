@@ -31,6 +31,7 @@ namespace hTunes
     {
         private MusicLib musicLib;
         private MediaPlayer mediaPlayer;
+        private Song song;
 
         // Used to track initial left button click
         private Point startPoint;
@@ -285,14 +286,14 @@ namespace hTunes
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
             DataRowView row = (DataRowView)dataGrid.SelectedItems[0];
-            Song song = musicLib.GetSong(Int32.Parse(row["Id"].ToString()));
+            song = musicLib.GetSong(Int32.Parse(row["Id"].ToString()));
             mediaPlayer.Open(new Uri(song.Filename));
             mediaPlayer.Play();
         }
 
         private void btnStop_Click(object sender, RoutedEventArgs e)
         {
-
+            mediaPlayer.Stop();
         }
 
 

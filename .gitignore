@@ -280,3 +280,9 @@ _Pvt_Extensions
 *.pdb
 *.cache
 *.baml
+*.suo
+*.pdb
+*.cache
+*.exe
+*.cache
+*.baml
