@@ -72,7 +72,7 @@
                 <ContextMenu>
                     <MenuItem Header="Rename" Click="RenamePlaylist_MenuItemClick">
                     </MenuItem>
-                    <MenuItem Header="Delete" Click="DeleteSong_MenuItemClick">
+                    <MenuItem Header="Delete" Click="DeletePlaylist_MenuItemClick">
                     </MenuItem>
                 </ContextMenu>
 
