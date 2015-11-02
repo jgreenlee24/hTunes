@@ -101,13 +101,13 @@ namespace hTunes
             // PM> Install-Package taglib
             // http://stackoverflow.com/questions/1750464/how-to-read-and-write-id3-tags-to-an-mp3-in-c
             TagLib.File file = TagLib.File.Create(filename);
-
+            String name = filename.Substring(filename.LastIndexOf('\\')+1, filename.LastIndexOf('.') - filename.LastIndexOf('\\') - 1);
             Song s = new Song
             {
-                Title = file.Tag.Title,
-                Artist = file.Tag.AlbumArtists[0],
-                Album = file.Tag.Album,
-                Genre = file.Tag.Genres[0],
+                Title = file.Tag.Title == null ? name : file.Tag.Title,
+                Artist = file.Tag.AlbumArtists.Length == 0 ? "Unknown" : file.Tag.AlbumArtists[0],
+                Album = file.Tag.Album == null ? "Unknown" : file.Tag.Album,
+                Genre = file.Tag.Genres.Length == 0 ? "Unknown" : file.Tag.Genres[0],
                 Length = file.Properties.Duration.Minutes + ":" + file.Properties.Duration.Seconds,
                 Filename = filename
             };

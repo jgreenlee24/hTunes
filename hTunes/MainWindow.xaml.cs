@@ -130,6 +130,7 @@ namespace hTunes
                 string filename = dlg.FileName;
                 Song song = musicLib.AddSong(filename);
                 musicLib.AddSongToPlaylist(song.Id, "All Music");
+                musicLib.Save();
             }
         }
 
