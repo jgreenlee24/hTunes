@@ -286,3 +286,5 @@ _Pvt_Extensions
 *.exe
 *.cache
 *.baml
+*.exe
+*.suo
