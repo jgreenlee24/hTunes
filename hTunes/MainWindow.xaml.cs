@@ -41,7 +41,7 @@ namespace hTunes
             InitializeComponent();
             musicLib = new MusicLib();
             UpdateList();
-            InitializeGrid();
+            UpdateGrid();
             mediaPlayer = new MediaPlayer();
         }
 
@@ -68,9 +68,10 @@ namespace hTunes
         }
 
         // Creates "All Music" Playlist and Syncs Grid with "All Music" Playlist
-        private void InitializeGrid()
+        private void UpdateGrid(string playlist = "All Music")
         {
-            DataTable table = musicLib.SongsForPlaylist("All Music");
+            dataGrid.ItemsSource = null;
+            DataTable table = musicLib.SongsForPlaylist(playlist);
             dataGrid.ItemsSource = table.AsDataView();
             dataGrid.IsReadOnly = false;
         }
@@ -219,7 +220,7 @@ namespace hTunes
         #region Context menu
 
         // Rename Playlist
-        private void Rename_MenuItemClick(object sender, RoutedEventArgs e)
+        private void RenamePlaylist_MenuItemClick(object sender, RoutedEventArgs e)
         {
             string playlist_name = (string)listBox1.SelectedValue;
             if (playlist_name != "All Music")
@@ -242,7 +243,7 @@ namespace hTunes
         }
 
         // Delete Playlist
-        private void Delete_MenuItemClick(object sender, RoutedEventArgs e)
+        private void DeletePlaylist_MenuItemClick(object sender, RoutedEventArgs e)
         {
             string playlist_name = (string)listBox1.SelectedValue;
             if (playlist_name != "All Music")
@@ -257,6 +258,37 @@ namespace hTunes
             {
                 MessageBox.Show("You can't delete All Music");
             }
+        }
+
+        // Play Song
+        private void Play_MenuItemClick(object sender, RoutedEventArgs e)
+        {
+            PlayMusic();
+        }
+
+        // Delete Song
+        private void DeleteSong_MenuItemClick(object sender, RoutedEventArgs e)
+        {
+            DataRowView row = (DataRowView)dataGrid.SelectedItems[0];
+            string playlist_name = (string)listBox1.SelectedValue;
+
+            if(playlist_name == "All Music")
+            {
+                MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure you want to delete \"" + row["Title"] + "\"?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
+                if (messageBoxResult == MessageBoxResult.Yes)
+                {
+                    musicLib.DeleteSong(Int32.Parse(row["Id"].ToString()));
+                    UpdateGrid("All Music");
+                }
+            }
+            else
+            {
+                int rowIndex = dataGrid.Items.IndexOf(dataGrid.SelectedCells[0].Item)+1;
+                musicLib.RemoveSongFromPlaylist(rowIndex, Int32.Parse(row["Id"].ToString()), playlist_name);
+                UpdateGrid(playlist_name);
+            }
+
+            musicLib.Save();
         }
 
         #endregion
@@ -283,7 +315,9 @@ namespace hTunes
             musicLib.Save();
         }
 
-        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        #region Music Controls
+
+        private void PlayMusic()
         {
             DataRowView row = (DataRowView)dataGrid.SelectedItems[0];
             song = musicLib.GetSong(Int32.Parse(row["Id"].ToString()));
@@ -291,12 +325,17 @@ namespace hTunes
             mediaPlayer.Play();
         }
 
+        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        {
+            PlayMusic();
+        }
+
         private void btnStop_Click(object sender, RoutedEventArgs e)
         {
             mediaPlayer.Stop();
         }
 
-
+        #endregion
 
 
 

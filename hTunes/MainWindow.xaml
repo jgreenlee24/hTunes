@@ -10,6 +10,15 @@
         </Grid.RowDefinitions>
         <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Margin="115,36,2,33" Grid.Row="1" Grid.RowSpan="2" 
                   MouseMove="dataGrid_MouseMove" PreviewMouseLeftButtonDown="dataGrid_PreviewMouseLeftButtonDown" CellEditEnding="dataGrid_CellEditEnding">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Play" Click="Play_MenuItemClick">
+                    </MenuItem>
+                    <MenuItem Header="Remove" Click="DeleteSong_MenuItemClick">
+                    </MenuItem>
+                </ContextMenu>
+
+            </DataGrid.ContextMenu>
             <!-- DataGrid Column Headers-->
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Visibility="Hidden"/>
@@ -61,9 +70,9 @@
                  AllowDrop="True" Drop="listBox1_Drop" DragOver="listBox1_DragOver">
             <ListBox.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Rename" Click="Rename_MenuItemClick">
+                    <MenuItem Header="Rename" Click="RenamePlaylist_MenuItemClick">
                     </MenuItem>
-                    <MenuItem Header="Delete" Click="Delete_MenuItemClick">
+                    <MenuItem Header="Delete" Click="DeleteSong_MenuItemClick">
                     </MenuItem>
                 </ContextMenu>
 
